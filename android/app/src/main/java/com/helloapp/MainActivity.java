@@ -1,7 +1,7 @@
 package com.helloapp;
 
 import com.facebook.react.ReactActivity;
-
+import android.os.Bundle; 
 public class MainActivity extends ReactActivity {
 
   /**
@@ -10,6 +10,8 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
+    // RNBootSplash.init(R.drawable.bootsplash, MainActivity.this);
+      
     return "HelloApp";
   }
 }

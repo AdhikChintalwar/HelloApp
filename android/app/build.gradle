@@ -123,6 +123,10 @@ def enableHermes = project.ext.react.get("enableHermes", false);
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
+     aaptOptions {
+        cruncherEnabled = false
+     }
+     
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -185,9 +189,15 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
-    
+    //  implementation "com.google.firebase:firebase-auth:17.0.0" ////this added separately.....................................
+    //   implementation 'com.firebaseui:firebase-ui-database:6.0.2'////this added separately.....................................
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
-    // implementation(project(':react-native-maps')){
+     implementation project(':react-native-maps')
+     implementation(project(':react-native-maps')){
+      exclude group: 'com.google.android.gms', module: 'play-services-base'
+      exclude group: 'com.google.android.gms', module: 'play-services-maps'
+   }
+    // implementation(project(':react-native-maps'))
     //   exclude group: 'com.google.android.gms', module: 'play-services-base'
     //   exclude group: 'com.google.android.gms', module: 'play-services-maps'
    
@@ -213,6 +223,7 @@ implementation 'com.google.android.gms:play-services-base:10.0.1'
     } else {
         implementation jscFlavor
     }
+    
 }
 
 // Run this once to be able to run the application with BUCK

@@ -2,12 +2,12 @@ import React from 'react';
 //import { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Image, ImageBackground } from 'react-native';
 
-function Bookings(){
+function myVechile(){
     return(
         <View>
-            <Text>Bookings</Text>
+            <Text>My vechile</Text>
         </View>
     )
 }
 
-export default Bookings;
+export default myVechile;
